@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hisyam Bintang Hidayat | Portofolio Profesional</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#050811',
+                        abyss: '#0a1128',
+                        deepblue: '#001f54',
+                        royal: '#034078',
+                        electric: '#00b4d8',
+                        cyanGlow: '#38bdf8'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out 2s infinite',
+                        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-18px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Aesthetic Gradients & Scroll Reveal */
+        .hero-bg-dark {
+            background: radial-gradient(circle at 15% 20%, rgba(3, 64, 120, 0.45) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 75%, rgba(0, 180, 216, 0.25) 0%, transparent 50%),
+                        linear-gradient(135deg, #03050a 0%, #070d1f 45%, #001845 100%);
+        }
+
+        .hero-bg-light {
+            background: radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.22) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 75%, rgba(3, 105, 161, 0.15) 0%, transparent 50%),
+                        linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(90deg, #38bdf8 0%, #00b4d8 50%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-gradient-dark {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.85) 0%, rgba(7, 15, 36, 0.95) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            backdrop-filter: blur(12px);
+        }
+
+        .card-gradient-dark:hover {
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 12px 32px -8px rgba(0, 180, 216, 0.25);
+        }
+
+        .card-gradient-light {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(2, 132, 199, 0.18);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px -5px rgba(3, 105, 161, 0.08);
+        }
+
+        .card-gradient-light:hover {
+            border-color: rgba(2, 132, 199, 0.45);
+            box-shadow: 0 14px 30px -6px rgba(2, 132, 199, 0.18);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: all 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typing Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+            color: #38bdf8;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-[#040711] dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-sky-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 dark:bg-[#050811]/80 backdrop-blur-md border-b border-sky-200/60 dark:border-sky-900/40">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo / Brand -->
+                <a href="#beranda" class="flex items-center gap-2.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-900 via-blue-900 to-sky-500 flex items-center justify-center text-white font-heading font-extrabold text-lg shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+                        HB
+                    </div>
+                    <div>
+                        <span class="font-heading font-bold text-lg tracking-tight text-slate-900 dark:text-white block leading-none">Hisyam<span class="text-sky-500">.dev</span></span>
+                        <span class="text-[11px] font-medium text-slate-500 dark:text-sky-300/70 tracking-wider uppercase">Portofolio</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#beranda" class="text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Beranda</a>
+                    <a href="#tentang" class="text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Tentang Saya</a>
+                    <a href="#keahlian" class="text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Kemampuan</a>
+                    <a href="#galeri" class="text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Galeri</a>
+                    <a href="#kontak" class="text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Theme Toggle & Mobile Menu Button -->
+                <div class="flex items-center gap-3">
+                    <!-- Dark / Light Mode Button -->
+                    <button id="theme-toggle" aria-label="Ubah Tema Gelap atau Terang" class="p-2.5 rounded-xl bg-sky-100/80 dark:bg-slate-900/90 text-sky-700 dark:text-sky-400 border border-sky-200 dark:border-sky-800/60 hover:scale-105 active:scale-95 transition-all shadow-sm">
+                        <i id="theme-icon" class="fas fa-sun text-base"></i>
+                    </button>
+
+                    <!-- CTA Button Desktop -->
+                    <a href="https://wa.me/6288994232815" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-900 via-blue-700 to-sky-500 hover:from-blue-800 hover:to-sky-400 shadow-md shadow-sky-500/20 transition-all hover:-translate-y-0.5">
+                        <i class="fab fa-whatsapp text-base"></i>
+                        <span>Hubungi Saya</span>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-[#070d1f]/95 backdrop-blur-lg border-b border-sky-200 dark:border-sky-900/50 px-4 pt-2 pb-5 space-y-2">
+            <a href="#beranda" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-sky-50 dark:hover:bg-sky-950/60">Beranda</a>
+            <a href="#tentang" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-sky-50 dark:hover:bg-sky-950/60">Tentang Saya</a>
+            <a href="#keahlian" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-sky-50 dark:hover:bg-sky-950/60">Kemampuan</a>
+            <a href="#galeri" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-sky-50 dark:hover:bg-sky-950/60">Galeri</a>
+            <a href="#kontak" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-sky-50 dark:hover:bg-sky-950/60">Kontak</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative min-h-screen flex items-center pt-24 pb-16 hero-bg-light dark:hero-bg-dark overflow-hidden">
+        <!-- Decorative Ambient Orbs -->
+        <div class="absolute top-24 left-10 w-64 h-64 bg-sky-500/20 dark:bg-sky-500/15 rounded-full blur-3xl animate-float pointer-events-none"></div>
+        <div class="absolute bottom-16 right-10 w-80 h-80 bg-blue-700/20 dark:bg-blue-600/20 rounded-full blur-3xl animate-float-delayed pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-sky-300 text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
+                        <span>Siap Berkolaborasi &amp; Berkarya</span>
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+                        Halo, Saya <br>
+                        <span class="text-gradient-blue">Hisyam Bintang Hidayat</span>
+                    </h1>
+
+                    <div class="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-300 h-8">
+                        Spesialis di bidang <span id="typing-text" class="font-bold text-sky-600 dark:text-sky-400 typing-cursor"></span>
+                    </div>
+
+                    <p class="text-slate-600 dark:text-slate-300/90 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Menggabungkan logika pemrograman, ketelitian dalam perbaikan perangkat keras maupun lunak komputer, serta kreativitas visual animasi untuk menciptakan solusi digital yang estetik dan fungsional.
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#galeri" class="px-6 py-3.5 rounded-2xl font-semibold text-white bg-gradient-to-r from-slate-950 via-blue-900 to-sky-500 hover:from-blue-950 hover:to-sky-400 shadow-lg shadow-sky-500/25 transition-all hover:-translate-y-1 flex items-center gap-2.5">
+                            <span>Lihat Galeri Karya</span>
+                            <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#kontak" class="px-6 py-3.5 rounded-2xl font-semibold text-slate-800 dark:text-white bg-white/80 dark:bg-slate-900/80 border border-sky-200 dark:border-sky-800/60 hover:border-sky-400 transition-all hover:-translate-y-1 flex items-center gap-2.5">
+                            <i class="fas fa-address-card text-sky-500"></i>
+                            <span>Info Kontak</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Info Badges -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-sky-500"></i>
+                            <span>Tanjung Sari</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-futbol text-sky-500"></i>
+                            <span>Hobi: Nonton Sepak Bola</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Profile Visual Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Outer Glow Ring -->
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-black via-blue-800 to-sky-400 opacity-75 blur-lg animate-pulse-slow"></div>
+                        
+                        <div class="relative rounded-3xl p-6 sm:p-8 card-gradient-light dark:card-gradient-dark text-center space-y-5">
+                            <!-- Avatar Emblem -->
+                            <div class="relative mx-auto w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-slate-950 via-blue-700 to-sky-400 shadow-xl">
+                                <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
+                                    <svg class="w-20 h-20 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                    </svg>
+                                </div>
+                                <span class="absolute bottom-1 right-1 w-6 h-6 rounded-full bg-emerald-500 border-4 border-slate-900" title="Tersedia untuk proyek"></span>
+                            </div>
+
+                            <div>
+                                <h2 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Hisyam Bintang Hidayat</h2>
+                                <p class="text-sm text-sky-600 dark:text-sky-400 font-medium mt-1">Developer • IT Troubleshooter • Animator</p>
+                            </div>
+
+                            <!-- 3 Core Pillars Mini Grid -->
+                            <div class="grid grid-cols-3 gap-2 pt-2 border-t border-slate-200 dark:border-slate-800/80">
+                                <div class="p-2.5 rounded-2xl bg-sky-500/10">
+                                    <i class="fas fa-code text-sky-500 text-lg mb-1"></i>
+                                    <p class="text-[11px] font-semibold text-slate-700 dark:text-slate-200">Coding</p>
+                                </div>
+                                <div class="p-2.5 rounded-2xl bg-blue-500/10">
+                                    <i class="fas fa-screwdriver-wrench text-blue-500 text-lg mb-1"></i>
+                                    <p class="text-[11px] font-semibold text-slate-700 dark:text-slate-200">PC Repair</p>
+                                </div>
+                                <div class="p-2.5 rounded-2xl bg-cyan-500/10">
+                                    <i class="fas fa-film text-cyan-500 text-lg mb-1"></i>
+                                    <p class="text-[11px] font-semibold text-slate-700 dark:text-slate-200">Animator</p>
+                                </div>
+                            </div>
+
+                            <!-- Direct Phone Link -->
+                            <a href="tel:088994232815" class="block w-full py-2.5 px-4 rounded-xl bg-slate-900 dark:bg-sky-950/70 hover:bg-blue-900 text-white text-xs sm:text-sm font-medium border border-sky-500/30 transition-colors">
+                                <i class="fas fa-phone-alt text-sky-400 mr-2"></i>0889-9423-2815
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Saya & Hobi Section -->
+    <section id="tentang" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">Profil Pribadi</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-2 text-slate-900 dark:text-white">Tentang <span class="text-gradient-blue">Saya</span></h2>
+                <div class="w-20 h-1.5 bg-gradient-to-r from-slate-900 via-blue-700 to-sky-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Biodata Lengkap -->
+                <div class="lg:col-span-7 rounded-3xl p-6 sm:p-8 card-gradient-light dark:card-gradient-dark reveal flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white mb-4">Mengenal Lebih Dekat</h3>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Saya <strong>Hisyam Bintang Hidayat</strong>, seorang antusias teknologi dan kreator visual yang berdomisili di Tanjung Sari. Saya memiliki ketertarikan mendalam pada pengembangan perangkat lunak (coding), analisis serta perbaikan masalah komputer (troubleshooting), dan pembuatan karya animasi digital yang dinamis.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-200/80 dark:border-slate-800">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/15 text-sky-500 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Nama Lengkap</p>
+                                <p class="text-sm font-semibold text-slate-900 dark:text-white">Hisyam Bintang Hidayat</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/15 text-sky-500 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Nomor HP / WhatsApp</p>
+                                <a href="https://wa.me/6288994232815" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">088994232815</a>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-2 flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-sky-500/15 text-sky-500 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Alamat Rumah</p>
+                                <p class="text-sm font-semibold text-slate-900 dark:text-white">Jalan Maninjau Blok C1 No 36, Tanjung Sari</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hobi Card -->
+                <div class="lg:col-span-5 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-[#040814] via-[#001d4a] to-[#023e8a] text-white shadow-xl border border-sky-400/25 reveal flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 opacity-10 text-9xl pointer-events-none">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-400/20 border border-sky-300/30 text-sky-300 text-xs font-semibold mb-5">
+                            <i class="fas fa-heart text-sky-400"></i>
+                            <span>Hobi &amp; Minat</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-3">Nonton Sepak Bola ⚽</h3>
+                        <p class="text-sky-100/85 text-sm sm:text-base leading-relaxed">
+                            Di luar aktivitas di depan layar komputer dan rendering animasi, waktu luang saya paling sering diisi dengan menonton pertandingan sepak bola. Bagi saya, sepak bola mengajarkan strategi, kerja sama tim, dan ketepatan waktu—nilai yang juga saya terapkan saat melakukan coding dan troubleshooting.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 pt-5 border-t border-sky-400/20 flex items-center justify-between text-xs text-sky-200">
+                        <span>Strategi • Fokus • Kreativitas</span>
+                        <span class="px-3 py-1 rounded-lg bg-sky-500/20 font-semibold">Football Enthusiast</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kemampuan (Skills) Section -->
+    <section id="keahlian" class="py-20 bg-slate-100/70 dark:bg-[#060b19] border-y border-sky-200/50 dark:border-sky-950/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">Kompetensi Utama</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-2 text-slate-900 dark:text-white">Kemampuan <span class="text-gradient-blue">Profesional</span></h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base">Tiga bidang keahlian utama yang saya tekuni secara mendalam.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill 1: Coding -->
+                <div class="rounded-3xl p-7 card-gradient-light dark:card-gradient-dark reveal hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-950 via-blue-800 to-sky-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-sky-500/20 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-3">Coding &amp; Pemrograman</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                        Membangun website responsif, aplikasi web interaktif, serta penulisan kode yang bersih, terstruktur, dan siap dipublikasikan di GitHub.
+                    </p>
+                    <div class="space-y-2 mb-5">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-slate-700 dark:text-slate-300">Web Development &amp; Logic</span>
+                            <span class="text-sky-600 dark:text-sky-400">90%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                            <div class="h-full rounded-full bg-gradient-to-r from-blue-900 to-sky-400 w-[90%]"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">HTML/CSS/JS</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">Git &amp; GitHub</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">UI Responsif</span>
+                    </div>
+                </div>
+
+                <!-- Skill 2: Troubleshooting Komputer -->
+                <div class="rounded-3xl p-7 card-gradient-light dark:card-gradient-dark reveal hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-950 via-blue-800 to-sky-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-sky-500/20 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-3">Troubleshooting Komputer</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                        Diagnosa kerusakan hardware maupun error software, instalasi sistem operasi, perakitan PC, pembersihan malware, serta optimasi performa perangkat.
+                    </p>
+                    <div class="space-y-2 mb-5">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-slate-700 dark:text-slate-300">Hardware &amp; Software Repair</span>
+                            <span class="text-sky-600 dark:text-sky-400">95%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                            <div class="h-full rounded-full bg-gradient-to-r from-blue-900 to-sky-400 w-[95%]"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">Rakit &amp; Servis PC</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">Instalasi OS</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">Optimasi Sistem</span>
+                    </div>
+                </div>
+
+                <!-- Skill 3: Animator -->
+                <div class="rounded-3xl p-7 card-gradient-light dark:card-gradient-dark reveal hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-950 via-blue-800 to-sky-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-sky-500/20 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-3">Animator &amp; Motion</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                        Menciptakan animasi visual 2D/3D yang ekspresif, motion graphics modern, transisi halus, dan storytelling visual yang menarik perhatian.
+                    </p>
+                    <div class="space-y-2 mb-5">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-slate-700 dark:text-slate-300">2D/3D Animation &amp; Motion</span>
+                            <span class="text-sky-600 dark:text-sky-400">88%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                            <div class="h-full rounded-full bg-gradient-to-r from-blue-900 to-sky-400 w-[88%]"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">Motion Graphics</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">3D Visual</span>
+                        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-sky-500/10 text-sky-700 dark:text-sky-300">Keyframing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Sesuai Kemampuan Section -->
+    <section id="galeri" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10 reveal">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">Dokumentasi &amp; Visual</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-2 text-slate-900 dark:text-white">Galeri <span class="text-gradient-blue">Kemampuan</span></h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base">Visualisasi aktivitas pada bidang Coding, Troubleshooting Komputer, dan Animasi.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 mb-10 reveal">
+                <button data-filter="all" class="filter-btn active px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-slate-950 via-blue-900 to-sky-500 text-white shadow-md transition-all">
+                    Semua Kategori
+                </button>
+                <button data-filter="coding" class="filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-200/80 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-sky-400 border border-transparent transition-all">
+                    <i class="fas fa-code mr-1.5 text-sky-500"></i>Coding
+                </button>
+                <button data-filter="troubleshooting" class="filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-200/80 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-sky-400 border border-transparent transition-all">
+                    <i class="fas fa-screwdriver-wrench mr-1.5 text-sky-500"></i>Troubleshooting Komputer
+                </button>
+                <button data-filter="animator" class="filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-200/80 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-sky-400 border border-transparent transition-all">
+                    <i class="fas fa-film mr-1.5 text-sky-500"></i>Animator
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1: Coding -->
+                <div class="gallery-item group relative rounded-3xl overflow-hidden card-gradient-light dark:card-gradient-dark cursor-pointer reveal" data-category="coding" data-title="Pengembangan Web & Coding" data-desc="Penulisan kode aplikasi web modern dengan struktur rapi dan performa cepat untuk repositori GitHub.">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x600/0a1128/38bdf8?text=Coding+Workspace'" alt="Coding dan Pemrograman" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <span class="inline-block px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-sky-500/15 text-sky-600 dark:text-sky-400 mb-2">Coding</span>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors">Pengembangan Web &amp; Coding</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">Pembuatan antarmuka web responsif dan logika pemrograman terstruktur.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Troubleshooting Komputer -->
+                <div class="gallery-item group relative rounded-3xl overflow-hidden card-gradient-light dark:card-gradient-dark cursor-pointer reveal" data-category="troubleshooting" data-title="Diagnosa & Perbaikan Hardware PC" data-desc="Pengecekan komponen motherboard, RAM, penyimpanan, serta pemeliharaan sistem pendingin komputer.">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x600/0a1128/38bdf8?text=Troubleshooting+Komputer'" alt="Troubleshooting Komputer Hardware" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <span class="inline-block px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-blue-500/15 text-blue-600 dark:text-sky-400 mb-2">Troubleshooting Komputer</span>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors">Diagnosa &amp; Perbaikan Hardware</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">Perakitan, perbaikan komponen internal PC, dan pemecahan masalah sistem.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Animator -->
+                <div class="gallery-item group relative rounded-3xl overflow-hidden card-gradient-light dark:card-gradient-dark cursor-pointer reveal" data-category="animator" data-title="Produksi Animasi & Motion Design" data-desc="Pembuatan karakter animasi 3D, pengaturan keyframe, pencahayaan adegan, dan rendering visual.">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x600/0a1128/38bdf8?text=Animator+Studio'" alt="Animator dan Motion Graphics" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <span class="inline-block px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 mb-2">Animator</span>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors">Produksi Animasi &amp; Motion Design</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">Perancangan animasi visual dinamis dan grafis gerak berkualitas tinggi.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Coding -->
+                <div class="gallery-item group relative rounded-3xl overflow-hidden card-gradient-light dark:card-gradient-dark cursor-pointer reveal" data-category="coding" data-title="Arsitektur Sistem & Debugging" data-desc="Pengujian kode, optimasi kecepatan loading halaman, dan manajemen versi proyek perangkat lunak.">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x600/0a1128/38bdf8?text=Software+Engineering'" alt="Laptop Coding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <span class="inline-block px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-sky-500/15 text-sky-600 dark:text-sky-400 mb-2">Coding</span>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors">Arsitektur Sistem &amp; Debugging</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">Pengujian fungsionalitas aplikasi serta penyempurnaan struktur program.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Troubleshooting Komputer -->
+                <div class="gallery-item group relative rounded-3xl overflow-hidden card-gradient-light dark:card-gradient-dark cursor-pointer reveal" data-category="troubleshooting" data-title="Optimasi Software & Instalasi Sistem" data-desc="Penanganan blue screen, instalasi ulang OS, konfigurasi driver, serta pemulihan performa laptop dan PC.">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x600/0a1128/38bdf8?text=System+Optimization'" alt="Servis dan Optimasi Komputer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <span class="inline-block px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-blue-500/15 text-blue-600 dark:text-sky-400 mb-2">Troubleshooting Komputer</span>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors">Optimasi Software &amp; Sistem</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">Perbaikan error sistem operasi, pembersihan virus, dan tuning kinerja.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6: Animator -->
+                <div class="gallery-item group relative rounded-3xl overflow-hidden card-gradient-light dark:card-gradient-dark cursor-pointer reveal" data-category="animator" data-title="Rendering 3D & Efek Visual" data-desc="Eksplorasi warna estetik, simulasi pergerakan kamera, dan compositing video animasi.">
+                    <div class="aspect-[4/3] overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x600/0a1128/38bdf8?text=3D+Visual+Art'" alt="3D Render dan Visual" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <span class="inline-block px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 mb-2">Animator</span>
+                        <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white group-hover:text-sky-500 transition-colors">Rendering 3D &amp; Efek Visual</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">Komposisi visual abstrak dan animasi gerakan halus bernuansa futuristik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-20 bg-slate-100/70 dark:bg-[#060b19] border-t border-sky-200/50 dark:border-sky-950/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">Mari Terhubung</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-2 text-slate-900 dark:text-white">Informasi <span class="text-gradient-blue">Kontak</span></h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base">Jangan ragu untuk menghubungi saya terkait proyek coding, servis/troubleshooting komputer, maupun pembuatan animasi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Contact Details Cards -->
+                <div class="lg:col-span-5 space-y-4 reveal">
+                    <!-- Phone / WhatsApp -->
+                    <div class="p-6 rounded-3xl card-gradient-light dark:card-gradient-dark flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-950 via-blue-800 to-sky-500 text-white flex items-center justify-center text-xl shrink-0">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-heading font-bold text-slate-900 dark:text-white">Nomor HP / WhatsApp</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 font-medium" id="phone-number-text">088994232815</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <a href="https://wa.me/6288994232815" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-sky-500 text-white text-xs font-semibold hover:bg-sky-600 transition-colors">
+                                    Chat WhatsApp
+                                </a>
+                                <button id="copy-phone-btn" class="px-3.5 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                                    <i class="fas fa-copy mr-1"></i>Salin Nomor
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="p-6 rounded-3xl card-gradient-light dark:card-gradient-dark flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-950 via-blue-800 to-sky-500 text-white flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-900 dark:text-white">Alamat Rumah</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                                Jalan Maninjau Blok C1 No 36, Tanjung Sari
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Ready Info -->
+                    <div class="p-6 rounded-3xl bg-gradient-to-r from-[#040814] via-[#001d4a] to-[#023e8a] text-white border border-sky-400/25 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-base">Portofolio Siap GitHub</h3>
+                            <p class="text-xs text-sky-200 mt-0.5">Dibangun dengan struktur bersih, responsif, dan ringan untuk GitHub Pages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Quick Message Form -->
+                <div class="lg:col-span-7 rounded-3xl p-6 sm:p-8 card-gradient-light dark:card-gradient-dark reveal">
+                    <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white mb-2">Kirim Pesan Langsung</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-6">Isi formulir singkat di bawah ini untuk terhubung langsung ke WhatsApp saya.</p>
+
+                    <form id="contact-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="sender-name" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Nama Anda</label>
+                                <input type="text" id="sender-name" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900/90 border border-slate-300 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-sky-500 transition-colors">
+                            </div>
+                            <div>
+                                <label for="service-topic" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Keperluan</label>
+                                <select id="service-topic" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900/90 border border-slate-300 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-sky-500 transition-colors">
+                                    <option value="Proyek Coding / Website">Proyek Coding / Website</option>
+                                    <option value="Troubleshooting Komputer">Troubleshooting Komputer</option>
+                                    <option value="Jasa Animator / Motion">Jasa Animator / Motion</option>
+                                    <option value="Diskusi / Lainnya">Diskusi / Lainnya</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="sender-message" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Pesan</label>
+                            <textarea id="sender-message" rows="4" required placeholder="Tuliskan detail kebutuhan atau pesan Anda..." class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900/90 border border-slate-300 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-sky-500 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 px-6 rounded-2xl font-semibold text-white bg-gradient-to-r from-slate-950 via-blue-900 to-sky-500 hover:from-blue-950 hover:to-sky-400 shadow-lg shadow-sky-500/25 transition-all flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span>Kirim via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-[#03050c] text-slate-400 border-t border-sky-950/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+            <div class="text-center sm:text-left">
+                <p class="font-semibold text-white">&copy; <span id="current-year"></span> Hisyam Bintang Hidayat. Seluruh Hak Cipta Dilindungi.</p>
+                <p class="text-xs text-slate-500 mt-0.5">Jalan Maninjau Blok C1 No 36, Tanjung Sari • 088994232815</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#beranda" class="hover:text-sky-400 transition-colors">Beranda</a>
+                <a href="#keahlian" class="hover:text-sky-400 transition-colors">Kemampuan</a>
+                <a href="#galeri" class="hover:text-sky-400 transition-colors">Galeri</a>
+                <a href="#kontak" class="hover:text-sky-400 transition-colors">Kontak</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4">
+        <div class="relative max-w-2xl w-full rounded-3xl overflow-hidden bg-slate-900 border border-sky-500/30 shadow-2xl">
+            <button id="close-lightbox" aria-label="Tutup Galeri" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-sky-500 flex items-center justify-center transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="Preview Galeri" class="w-full max-h-[60vh] object-cover">
+            <div class="p-6">
+                <span id="lightbox-cat" class="inline-block px-3 py-1 rounded-lg text-xs font-bold uppercase bg-sky-500/20 text-sky-400 mb-2"></span>
+                <h3 id="lightbox-title" class="font-heading text-xl font-bold text-white"></h3>
+                <p id="lightbox-desc" class="text-sm text-slate-300 mt-2 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification (No alert()) -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 translate-y-20 opacity-0 pointer-events-none transition-all duration-300 px-5 py-3.5 rounded-2xl bg-slate-900 text-white border border-sky-400/40 shadow-xl flex items-center gap-3 text-sm font-medium">
+        <i class="fas fa-check-circle text-sky-400 text-lg"></i>
+        <span id="toast-message">Nomor berhasil disalin!</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set Current Year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // 1. Dark / Light Mode Toggle
+            const htmlEl = document.documentElement;
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+
+            // Default to dark mode (aesthetic black & blue gradient) unless user previously chose light
+            const savedTheme = localStorage.getItem('hisyam-portfolio-theme');
+            if (savedTheme === 'light') {
+                htmlEl.classList.remove('dark');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                htmlEl.classList.add('dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                htmlEl.classList.toggle('dark');
+                const isDark = htmlEl.classList.contains('dark');
+                localStorage.setItem('hisyam-portfolio-theme', isDark ? 'dark' : 'light');
+                if (isDark) {
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                    showToast('Mode Gelap (Hitam & Biru) aktif');
+                } else {
+                    themeIcon.classList.replace('fa-sun', 'fa-moon');
+                    showToast('Mode Terang aktif');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 3. Typing Text Animation
+            const typingEl = document.getElementById('typing-text');
+            const roles = [
+                'Coding & Web Development',
+                'Troubleshooting Komputer',
+                'Animator & Motion Design'
+            ];
+            let roleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeEffect() {
+                const currentRole = roles[roleIndex];
+                if (isDeleting) {
+                    typingEl.textContent = currentRole.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingEl.textContent = currentRole.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let speed = isDeleting ? 45 : 85;
+                if (!isDeleting && charIndex === currentRole.length) {
+                    speed = 1800;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    speed = 400;
+                }
+                setTimeout(typeEffect, speed);
+            }
+            typeEffect();
+
+            // 4. Scroll Reveal Animation
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 5. Gallery Filter
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button style
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-gradient-to-r', 'from-slate-950', 'via-blue-900', 'to-sky-500', 'text-white', 'shadow-md');
+                        b.classList.add('bg-slate-200/80', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300');
+                    });
+                    btn.classList.add('active', 'bg-gradient-to-r', 'from-slate-950', 'via-blue-900', 'to-sky-500', 'text-white', 'shadow-md');
+                    btn.classList.remove('bg-slate-200/80', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300');
+
+                    const filterValue = btn.getAttribute('data-filter');
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        if (filterValue === 'all' || filterValue === category) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // 6. Gallery Lightbox Modal
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCat = document.getElementById('lightbox-cat');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxDesc = document.getElementById('lightbox-desc');
+            const closeLightbox = document.getElementById('close-lightbox');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').src;
+                    const catText = item.querySelector('span').textContent;
+                    const titleText = item.getAttribute('data-title');
+                    const descText = item.getAttribute('data-desc');
+
+                    lightboxImg.src = imgSrc;
+                    lightboxCat.textContent = catText;
+                    lightboxTitle.textContent = titleText;
+                    lightboxDesc.textContent = descText;
+
+                    lightboxModal.classList.remove('hidden');
+                    lightboxModal.classList.add('flex');
+                });
+            });
+
+            closeLightbox.addEventListener('click', () => {
+                lightboxModal.classList.add('hidden');
+                lightboxModal.classList.remove('flex');
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.add('hidden');
+                    lightboxModal.classList.remove('flex');
+                }
+            });
+
+            // 7. Copy Phone Number with Toast Notification
+            const copyPhoneBtn = document.getElementById('copy-phone-btn');
+            copyPhoneBtn.addEventListener('click', () => {
+                const tempInput = document.createElement('input');
+                tempInput.value = '088994232815';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                showToast('Nomor 088994232815 berhasil disalin!');
+            });
+
+            // 8. Interactive Contact Form -> WhatsApp Redirect
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('sender-name').value.trim();
+                const topic = document.getElementById('service-topic').value;
+                const message = document.getElementById('sender-message').value.trim();
+
+                const waText = `Halo Mas Hisyam Bintang Hidayat,%0ASaya *${encodeURIComponent(name)}*.%0A*Keperluan:* ${encodeURIComponent(topic)}%0A*Pesan:* ${encodeURIComponent(message)}`;
+                const waUrl = `https://wa.me/6288994232815?text=${waText}`;
+                
+                showToast('Mengarahkan ke WhatsApp...');
+                setTimeout(() => {
+                    window.open(waUrl, '_blank', 'noopener,noreferrer');
+                }, 600);
+            });
+
+            // Helper Toast Function
+            let toastTimeout;
+            function showToast(msg) {
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toast-message');
+                toastMsg.textContent = msg;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
